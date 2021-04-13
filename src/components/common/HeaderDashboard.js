@@ -21,8 +21,6 @@ const { Search } = Input;
 const onSearch = value => console.log(value);
 
 const HeaderStyle = {
-  // display: 'flex',
-  // justifyContent: 'space-between',
   alignItems: 'center',
   padding: '0.75rem 2vw',
   display: 'grid',
@@ -110,8 +108,6 @@ const HeaderDashboard = () => {
                 {userInfo ? userInfo.name : 'loading...'} <DownOutlined />
               </Space>
             </Dropdown>
-            {/*<Divider type="vertical" />*/}
-            {/*<Button onClick={() => authService.logout()}>Logout</Button>*/}
           </Space>
         </Row>
       </Col>
