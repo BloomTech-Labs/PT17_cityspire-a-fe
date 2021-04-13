@@ -11,16 +11,23 @@ import {
   Avatar,
   Button,
   Image,
+  Input,
   Space,
   Divider,
 } from 'antd';
 import { UserOutlined, DownOutlined, SearchOutlined } from '@ant-design/icons';
 
+const { Search } = Input;
+const onSearch = value => console.log(value);
+
 const HeaderStyle = {
-  display: 'flex',
-  justifyContent: 'space-between',
+  // display: 'flex',
+  // justifyContent: 'space-between',
   alignItems: 'center',
-  padding: '1.25rem 5vw',
+  padding: '0.75rem 2vw',
+  display: 'grid',
+  gridTemplateColumns: 'auto 1fr auto',
+  gridTemplateRows: '1fr',
   borderBottom: 'solid thin #eee',
   backgroundColor: 'white',
 };
@@ -60,7 +67,10 @@ const HeaderDashboard = () => {
   const menu = (
     <Menu>
       <Menu.Item key="0" onClick={() => handleOnClick(userInfo.sub)}>
-        Pinned Cities
+        User Dashboard
+      </Menu.Item>
+      <Menu.Item key="1" onClick={() => authService.logout()}>
+        Log out
       </Menu.Item>
     </Menu>
   );
@@ -76,7 +86,17 @@ const HeaderDashboard = () => {
           />
         </a>
       </Col>
-
+      <Col>
+        <Row>
+          <Search
+            placeholder="input search text"
+            onSearch={onSearch}
+            style={{ width: '100%' }}
+          />
+          {/*<Search placeholder="input search text" allowClear onSearch={onSearch} style={{ width: 200 }} />*/}
+          {/*<Search placeholder="input search text" onSearch={onSearch} enterButton />*/}
+        </Row>
+      </Col>
       <Col>
         <Row>
           <Space size="large">
@@ -90,14 +110,8 @@ const HeaderDashboard = () => {
                 {userInfo ? userInfo.name : 'loading...'} <DownOutlined />
               </Space>
             </Dropdown>
-            <Divider type="vertical" />
-            <a href="/" style={{ color: 'grey' }}>
-              <SearchOutlined
-                style={{ cursor: 'pointer', fontSize: '1.15rem' }}
-              />
-            </a>
-            <Divider type="vertical" />
-            <Button onClick={() => authService.logout()}>Logout</Button>
+            {/*<Divider type="vertical" />*/}
+            {/*<Button onClick={() => authService.logout()}>Logout</Button>*/}
           </Space>
         </Row>
       </Col>

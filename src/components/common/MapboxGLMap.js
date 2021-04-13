@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { mapboxConfig } from '../../utils/mapboxConfig';
 import ReactMapGL from 'react-map-gl';
-import mapboxgl from 'mapbox-gl/dist/mapbox-gl-csp';
+// import mapboxgl from 'mapbox-gl/dist/mapbox-gl-csp';
 // eslint-disable-next-line import/no-webpack-loader-syntax
 
 const MapboxGLMap = ({ lat, long }) => {

@@ -60,7 +60,7 @@ const Header = () => {
   const menu = (
     <Menu>
       <Menu.Item key="0" onClick={() => handleOnClick(userInfo.sub)}>
-        Pinned Cities
+        User Dashboard
       </Menu.Item>
     </Menu>
   );
