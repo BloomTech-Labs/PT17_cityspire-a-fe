@@ -41,7 +41,7 @@ const RenderUserDashboard = ({
                 <Card style={{ fontSize: '1.2rem', margin: '1.5vw' }} key={i}>
                   <Row>
                     <Col xs={24}>
-                      {item.city}, {item.state}
+                      {item.city.city}, {item.city.state}
                     </Col>
                     <Col xs={8} sm={8} md={24} lg={12} xl={8}>
                       <Statistic
