@@ -4,6 +4,7 @@ import List from './List';
 import LoadingComponent from './LoadingComponent';
 import Button from './Button';
 import Header from './Header';
+import HeaderDashboard from './HeaderDashboard';
 import Footer from './Footer';
 import SearchForm from './SearchForm';
 import MapboxGLMap from './MapboxGLMap';
@@ -16,6 +17,7 @@ export {
   LoadingComponent,
   Button,
   Header,
+  HeaderDashboard,
   Footer,
   SearchForm,
   MapboxGLMap,
