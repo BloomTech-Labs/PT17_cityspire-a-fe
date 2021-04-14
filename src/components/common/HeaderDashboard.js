@@ -3,20 +3,28 @@ import { useOktaAuth } from '@okta/okta-react';
 import { useHistory } from 'react-router-dom';
 
 import cityspireLogo from '../../assets/imgs/cityspireLogo.png';
-import { Row, Col, Menu, Dropdown, Avatar, Image, Input, Space } from 'antd';
-import { UserOutlined, DownOutlined } from '@ant-design/icons';
+import { Row, Col, Menu, Dropdown, Avatar, Image, Space } from 'antd';
+import {
+  UserOutlined,
+  DownOutlined,
+  EllipsisOutlined,
+} from '@ant-design/icons';
 
-const { Search } = Input;
-const onSearch = value => console.log(value);
+import { SearchComponent } from './SearchComponent';
 
 const HeaderStyle = {
   alignItems: 'center',
-  padding: '0.75rem 2vw',
+  padding: '0.75rem 1.5vw',
   display: 'grid',
   gridTemplateColumns: 'auto 1fr auto',
   gridTemplateRows: '1fr',
+  gridGap: '1rem',
   borderBottom: 'solid thin #eee',
   backgroundColor: 'white',
+};
+
+const LogoStyle = {
+  marginBottom: '0',
 };
 
 const HeaderDashboard = () => {
@@ -53,9 +61,9 @@ const HeaderDashboard = () => {
 
   const menu = (
     <Menu>
-      <Menu.Item key="0" onClick={() => handleOnClick(userInfo.sub)}>
-        User Dashboard
-      </Menu.Item>
+      {/*<Menu.Item key="0" onClick={() => handleOnClick(userInfo.sub)}>*/}
+      {/*  User Dashboard*/}
+      {/*</Menu.Item>*/}
       <Menu.Item key="1" onClick={() => authService.logout()}>
         Log out
       </Menu.Item>
@@ -65,23 +73,20 @@ const HeaderDashboard = () => {
   return (
     <Row style={HeaderStyle}>
       <Col>
-        <a href="/">
-          <Image
-            preview={false}
-            src={cityspireLogo}
-            style={{ width: '120px' }}
-          />
-        </a>
+        <h1 style={LogoStyle}>
+          <a href="/">
+            {/*<Image*/}
+            {/*  preview={false}*/}
+            {/*  src={cityspireLogo}*/}
+            {/*  style={{ width: '120px' }}*/}
+            {/*/>*/}
+            CitySpire
+          </a>
+        </h1>
       </Col>
       <Col>
         <Row>
-          <Search
-            placeholder="input search text"
-            onSearch={onSearch}
-            style={{ width: '100%' }}
-          />
-          {/*<Search placeholder="input search text" allowClear onSearch={onSearch} style={{ width: 200 }} />*/}
-          {/*<Search placeholder="input search text" onSearch={onSearch} enterButton />*/}
+          <SearchComponent />
         </Row>
       </Col>
       <Col>
@@ -94,7 +99,8 @@ const HeaderDashboard = () => {
                 style={{ cursor: 'pointer' }}
               >
                 <Avatar size="small" icon={<UserOutlined />} />
-                {userInfo ? userInfo.name : 'loading...'} <DownOutlined />
+                {userInfo ? userInfo.name : 'loading...'}
+                <EllipsisOutlined />
               </Space>
             </Dropdown>
           </Space>
