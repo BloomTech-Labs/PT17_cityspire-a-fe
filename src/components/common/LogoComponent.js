@@ -1,24 +1,34 @@
 import React from 'react';
 
 import { Image } from 'antd';
-import cityspireLogo from '../../assets/imgs/cityspireLogo.png';
+import cityspireLogo from '../../assets/imgs/cityspireLogoAlternative.png';
 
 const LogoStyle = {
   marginBottom: '0',
+  display: 'flex',
+  alignItems: 'center',
+};
+
+const LogoImageStyle = {
+  // display: 'inline-block',
+  width: 'auto',
+  height: '2.5rem',
+  marginRight: '1rem',
 };
 
 const LogoComponent = () => {
   return (
-    <h1 style={LogoStyle}>
-      <a href="/">
+    <a href="/">
+      <h1 style={LogoStyle}>
         {/*<Image*/}
         {/*  preview={false}*/}
         {/*  src={cityspireLogo}*/}
-        {/*  style={{ width: '120px' }}*/}
+        {/*  style={LogoImageStyle}*/}
         {/*/>*/}
+        <img src={cityspireLogo} style={LogoImageStyle} alt="" />
         CitySpire
-      </a>
-    </h1>
+      </h1>
+    </a>
   );
 };
 
