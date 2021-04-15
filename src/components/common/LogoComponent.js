@@ -1,6 +1,4 @@
 import React from 'react';
-
-import { Image } from 'antd';
 import cityspireLogo from '../../assets/imgs/cityspireLogoAlternative.png';
 
 const LogoStyle = {
@@ -10,7 +8,6 @@ const LogoStyle = {
 };
 
 const LogoImageStyle = {
-  // display: 'inline-block',
   width: 'auto',
   height: '2.5rem',
   marginRight: '1rem',
