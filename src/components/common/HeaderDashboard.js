@@ -3,7 +3,12 @@ import { useOktaAuth } from '@okta/okta-react';
 import { useHistory } from 'react-router-dom';
 
 import { Row, Col, Menu, Dropdown, Avatar, Space } from 'antd';
-import { UserOutlined, EllipsisOutlined } from '@ant-design/icons';
+import {
+  UserOutlined,
+  EllipsisOutlined,
+  LogoutOutlined,
+  PushpinOutlined,
+} from '@ant-design/icons';
 
 import LogoComponent from './LogoComponent';
 import { SearchComponent } from './SearchComponent';
@@ -53,10 +58,12 @@ const HeaderDashboard = () => {
 
   const menu = (
     <Menu>
-      {/*<Menu.Item key="0" onClick={() => handleOnClick(userInfo.sub)}>*/}
-      {/*  User Dashboard*/}
-      {/*</Menu.Item>*/}
+      <Menu.Item key="0">
+        <PushpinOutlined />
+        Saved Cities
+      </Menu.Item>
       <Menu.Item key="1" onClick={() => authService.logout()}>
+        <LogoutOutlined />
         Log out
       </Menu.Item>
     </Menu>
