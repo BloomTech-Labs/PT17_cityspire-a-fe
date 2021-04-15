@@ -2,14 +2,10 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 import { useHistory } from 'react-router-dom';
 
-import cityspireLogo from '../../assets/imgs/cityspireLogo.png';
-import { Row, Col, Menu, Dropdown, Avatar, Image, Space } from 'antd';
-import {
-  UserOutlined,
-  DownOutlined,
-  EllipsisOutlined,
-} from '@ant-design/icons';
+import { Row, Col, Menu, Dropdown, Avatar, Space } from 'antd';
+import { UserOutlined, EllipsisOutlined } from '@ant-design/icons';
 
+import LogoComponent from './LogoComponent';
 import { SearchComponent } from './SearchComponent';
 
 const HeaderStyle = {
@@ -21,10 +17,6 @@ const HeaderStyle = {
   gridGap: '1rem',
   borderBottom: 'solid thin #eee',
   backgroundColor: 'white',
-};
-
-const LogoStyle = {
-  marginBottom: '0',
 };
 
 const HeaderDashboard = () => {
@@ -73,16 +65,7 @@ const HeaderDashboard = () => {
   return (
     <Row style={HeaderStyle}>
       <Col>
-        <h1 style={LogoStyle}>
-          <a href="/">
-            {/*<Image*/}
-            {/*  preview={false}*/}
-            {/*  src={cityspireLogo}*/}
-            {/*  style={{ width: '120px' }}*/}
-            {/*/>*/}
-            CitySpire
-          </a>
-        </h1>
+        <LogoComponent />
       </Col>
       <Col>
         <Row>

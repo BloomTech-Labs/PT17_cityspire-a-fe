@@ -5,6 +5,7 @@ import LoadingComponent from './LoadingComponent';
 import Button from './Button';
 import Header from './Header';
 import HeaderDashboard from './HeaderDashboard';
+import LogoComponent from './LogoComponent';
 import Footer from './Footer';
 import SearchForm from './SearchForm';
 import SearchComponent from './SearchComponent';
@@ -19,6 +20,7 @@ export {
   Button,
   Header,
   HeaderDashboard,
+  LogoComponent,
   Footer,
   SearchComponent,
   SearchForm,
