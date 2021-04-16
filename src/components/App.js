@@ -12,6 +12,7 @@ import { config } from '../utils/oktaConfig';
 import { LoadingComponent } from './common';
 import { CitySearchResultsPage } from './pages/CitySearchResults';
 import { UserDashboardPage } from './pages/UserDashboard';
+import { PinnedCitiesPage } from './pages/PinnedCities';
 import { PinnedCityPage } from './pages/PinnedCity';
 
 const App = () => {
@@ -40,7 +41,11 @@ const App = () => {
           component={() => <HomePage LoadingComponent={LoadingComponent} />}
         />
 
-        <SecureRoute path="/profile/:id/dashboard" exact>
+        <SecureRoute path="/profile/:id/user-dashboard" exact>
+          <UserDashboardPage id={id} />
+        </SecureRoute>
+
+        <SecureRoute path="/profile/:id/pinned-cities" exact>
           <UserDashboardPage id={id} />
         </SecureRoute>
 

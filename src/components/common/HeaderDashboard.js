@@ -2,12 +2,13 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 import { useHistory } from 'react-router-dom';
 
-import { Row, Col, Menu, Dropdown, Avatar, Space } from 'antd';
+import { Row, Col, Menu, Dropdown, Avatar, Space, Button } from 'antd';
 import {
   UserOutlined,
   EllipsisOutlined,
   LogoutOutlined,
-  PushpinOutlined,
+  DashboardOutlined,
+  HeartOutlined,
 } from '@ant-design/icons';
 
 import LogoComponent from './LogoComponent';
@@ -52,17 +53,25 @@ const HeaderDashboard = () => {
     return () => (isSubscribed = false);
   }, [memoAuthService]);
 
-  const handleOnClick = id => {
-    push(`/profile/${id}/dashboard`);
+  const routeUserDashboard = id => {
+    push(`/profile/${id}/user-dashboard`);
+  };
+
+  const routePinnedCities = id => {
+    push(`/profile/${id}/pinned-cities`);
   };
 
   const menu = (
     <Menu>
-      <Menu.Item key="0">
-        <PushpinOutlined />
-        Saved Cities
+      <Menu.Item key="0" onClick={() => routeUserDashboard(userInfo.sub)}>
+        <DashboardOutlined />
+        User Dashboard
       </Menu.Item>
-      <Menu.Item key="1" onClick={() => authService.logout()}>
+      <Menu.Item key="1" onClick={() => routePinnedCities(userInfo.sub)}>
+        <HeartOutlined />
+        Pinned Cities
+      </Menu.Item>
+      <Menu.Item key="2" onClick={() => authService.logout()}>
         <LogoutOutlined />
         Log out
       </Menu.Item>
@@ -89,8 +98,10 @@ const HeaderDashboard = () => {
                 style={{ cursor: 'pointer' }}
               >
                 <Avatar size="small" icon={<UserOutlined />} />
-                {userInfo ? userInfo.name : 'loading...'}
-                <EllipsisOutlined />
+                <Button>
+                  {userInfo ? userInfo.name : 'loading...'}
+                  <EllipsisOutlined />
+                </Button>
               </Space>
             </Dropdown>
           </Space>

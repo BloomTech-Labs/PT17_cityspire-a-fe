@@ -17,7 +17,7 @@
     "plotly.js": "^1.54.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-map-gl": "^6.1.11",
+    "react-map-gl": "^6.1.12",
     "react-plotly.js": "^2.4.0",
     "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0",
@@ -91,6 +91,7 @@
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "jest-prop-type-error": "^1.1.0",
     "lint-staged": "^10.5.4",
-    "prettier-eslint-cli": "^5.0.1"
+    "prettier-eslint-cli": "^5.0.1",
+    "prop-types": "^15.7.2"
   }
 }

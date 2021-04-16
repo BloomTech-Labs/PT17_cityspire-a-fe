@@ -54,7 +54,7 @@ const Header = () => {
   }, [memoAuthService]);
 
   const handleOnClick = id => {
-    push(`/profile/${id}/dashboard`);
+    push(`/profile/${id}/user-dashboard`);
   };
 
   const menu = (
