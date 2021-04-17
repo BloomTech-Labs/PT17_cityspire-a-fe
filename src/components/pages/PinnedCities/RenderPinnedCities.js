@@ -27,7 +27,7 @@ const RenderPinnedCities = ({
             justifyContent: 'center',
             alignContent: 'center',
           }}
-          description="No Pinned Cities"
+          description={false}
         />
       ) : (
         Object.keys(savedCities).map((key, i) => (

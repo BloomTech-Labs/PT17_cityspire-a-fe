@@ -27,7 +27,7 @@ const RenderUserDashboard = ({
   return (
     <>
       {savedCities.length === 0 ? (
-        <Empty style={EmptyStyle} description="No information yet" />
+        <Empty style={EmptyStyle} description={false} />
       ) : (
         Object.keys(savedCities).map((key, i) => (
           <Row
