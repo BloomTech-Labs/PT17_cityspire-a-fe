@@ -28,46 +28,38 @@ const App = () => {
 
   const { id, city, state } = useParams();
 
-  const RootStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100vh',
-  };
-
   return (
-    <div style={RootStyle}>
-      <Security {...config} onAuthRequired={authHandler}>
-        <Switch>
-          <Route path="/login" component={LoginPage} />
-          <Route path="/implicit/callback" component={LoginCallback} />
+    <Security {...config} onAuthRequired={authHandler}>
+      <Switch>
+        <Route path="/login" component={LoginPage} />
+        <Route path="/implicit/callback" component={LoginCallback} />
 
-          {/* any of the routes you need secured should be registered as SecureRoutes */}
-          <SecureRoute
-            path="/"
-            exact
-            component={() => <HomePage LoadingComponent={LoadingComponent} />}
-          />
+        {/* any of the routes you need secured should be registered as SecureRoutes */}
+        <SecureRoute
+          path="/"
+          exact
+          component={() => <HomePage LoadingComponent={LoadingComponent} />}
+        />
 
-          <SecureRoute path="/profile/:id/user-dashboard" exact>
-            <UserDashboardPage id={id} />
-          </SecureRoute>
+        <SecureRoute path="/profile/:id/user-dashboard" exact>
+          <UserDashboardPage id={id} />
+        </SecureRoute>
 
-          <SecureRoute path="/profile/:id/pinned-cities" exact>
-            <UserDashboardPage id={id} />
-          </SecureRoute>
+        <SecureRoute path="/profile/:id/pinned-cities" exact>
+          <PinnedCitiesPage id={id} />
+        </SecureRoute>
 
-          <SecureRoute path="/:state/:city" exact>
-            <CitySearchResultsPage city={city} state={state} />
-          </SecureRoute>
+        <SecureRoute path="/:state/:city" exact>
+          <CitySearchResultsPage city={city} state={state} />
+        </SecureRoute>
 
-          <SecureRoute path="/pinned/:state/:city" exact>
-            <PinnedCityPage city={city} state={state} />
-          </SecureRoute>
+        <SecureRoute path="/pinned/:state/:city" exact>
+          <PinnedCityPage city={city} state={state} />
+        </SecureRoute>
 
-          <Route component={NotFoundPage} />
-        </Switch>
-      </Security>
-    </div>
+        <Route component={NotFoundPage} />
+      </Switch>
+    </Security>
   );
 };
 

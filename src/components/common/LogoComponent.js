@@ -1,5 +1,5 @@
 import React from 'react';
-import cityspireLogo from '../../assets/imgs/cityspireLogoAlternative.png';
+import cityspireLogo2 from '../../assets/imgs/citySpireLogoAlternative2.png';
 
 const LogoStyle = {
   marginBottom: '0',
@@ -17,12 +17,11 @@ const LogoComponent = () => {
   return (
     <a href="/">
       <h1 style={LogoStyle}>
-        {/*<Image*/}
-        {/*  preview={false}*/}
-        {/*  src={cityspireLogo}*/}
-        {/*  style={LogoImageStyle}*/}
-        {/*/>*/}
-        <img src={cityspireLogo} style={LogoImageStyle} alt="" />
+        <img
+          src={cityspireLogo2}
+          style={LogoImageStyle}
+          alt="CitySpire | Find your home!"
+        />
         CitySpire
       </h1>
     </a>

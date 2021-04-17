@@ -90,9 +90,10 @@ const HeaderDashboard = () => {
       </Col>
       <Col>
         <Row>
-          <Space size="large">
+          <Space size="large" wrap>
             <Dropdown overlay={menu} trigger={['click']}>
               <Space
+                wrap
                 size="small"
                 onClick={e => e.preventDefault()}
                 style={{ cursor: 'pointer' }}
