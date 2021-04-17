@@ -6,7 +6,7 @@ import { List as AntList, Card } from 'antd';
 
 import 'antd/dist/antd.css';
 
-// export default { title: 'List', parameters: { notes: markdown } };
+export default { title: 'List', parameters: { notes: markdown } };
 
 const handleFetchItems = () =>
   Promise.resolve([
