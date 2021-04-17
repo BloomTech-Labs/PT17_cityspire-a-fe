@@ -19,7 +19,16 @@ const RenderPinnedCities = ({
   return (
     <>
       {savedCities.length === 0 ? (
-        <Empty style={{ padding: '24vw 0' }} description="No pinned cities." />
+        <Empty
+          style={{
+            padding: '0',
+            flexGrow: '1',
+            display: 'grid',
+            justifyContent: 'center',
+            alignContent: 'center',
+          }}
+          description="No Pinned Cities"
+        />
       ) : (
         Object.keys(savedCities).map((key, i) => (
           <Row
