@@ -1,5 +1,4 @@
 import React from 'react';
-import cityspireLogo from '../../assets/imgs/cityspireLogoAlternative.png';
 import cityspireLogo2 from '../../assets/imgs/citySpireLogoAlternative2.png';
 
 const LogoStyle = {
@@ -18,7 +17,6 @@ const LogoComponent = () => {
   return (
     <a href="/">
       <h1 style={LogoStyle}>
-        {/*<img src={cityspireLogo} style={LogoImageStyle} alt="CitySpire | Find your home!" />*/}
         <img
           src={cityspireLogo2}
           style={LogoImageStyle}
