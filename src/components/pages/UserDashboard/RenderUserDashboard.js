@@ -11,6 +11,14 @@ const StatisticStyle = {
   marginBottom: '1rem',
 };
 
+const EmptyStyle = {
+  padding: '0',
+  flexGrow: '1',
+  display: 'grid',
+  justifyContent: 'center',
+  alignContent: 'center',
+};
+
 const RenderUserDashboard = ({
   savedCities,
   handleRemoveCity,
@@ -19,16 +27,7 @@ const RenderUserDashboard = ({
   return (
     <>
       {savedCities.length === 0 ? (
-        <Empty
-          style={{
-            padding: '0',
-            flexGrow: '1',
-            display: 'grid',
-            justifyContent: 'center',
-            alignContent: 'center',
-          }}
-          description="No information yet"
-        />
+        <Empty style={EmptyStyle} description="No information yet" />
       ) : (
         Object.keys(savedCities).map((key, i) => (
           <Row
