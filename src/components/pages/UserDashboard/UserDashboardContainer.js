@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { fetchSavedCity, unpinCity } from '../../../state/actions';
 
 import { Spin, notification } from 'antd';
-import { Header, Footer } from '../../common/';
+import { HeaderNav, Footer } from '../../common/';
 import RenderUserDashboard from './RenderUserDashboard';
 
 const spinStyle = {
@@ -53,7 +53,7 @@ const UserDashboardContainer = ({
 
   return (
     <>
-      <Header />
+      <HeaderNav />
       {isFetching ? (
         <div style={spinStyle}>
           <Spin tip="Loading..." size="large"></Spin>

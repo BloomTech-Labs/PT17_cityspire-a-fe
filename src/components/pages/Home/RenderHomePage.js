@@ -10,8 +10,8 @@ import city4 from '../../../assets/imgs/city4.png';
 import city5 from '../../../assets/imgs/city5.png';
 
 import { Layout, Image, Space, Carousel } from 'antd';
-
-import { Header, Footer, SearchForm } from '../../common';
+// import { Header, Footer, SearchForm } from '../../common';
+import { HeaderNav, Footer, SearchForm } from '../../common';
 
 const { Content } = Layout;
 
@@ -27,7 +27,8 @@ const contentStyle = {
 function RenderHomePage() {
   return (
     <Layout className="layout">
-      <Header />
+      {/* <Header /> */}
+      <HeaderNav />
       <Image
         className="cities"
         preview={false}

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 import { useHistory } from 'react-router-dom';
 
-import cityspireLogo from '../../assets/imgs/cityspireLogo.png';
+import cityspireLogo from '../../assets/imgs/CSpireLogo.png';
 import {
   Row,
   Col,
@@ -72,7 +72,7 @@ const Header = () => {
           <Image
             preview={false}
             src={cityspireLogo}
-            style={{ width: '120px' }}
+            style={{ width: '180px', padding: '10px' }}
           />
         </a>
       </Col>

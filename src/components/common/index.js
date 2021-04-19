@@ -3,7 +3,8 @@ import FormInput from './FormInput';
 import List from './List';
 import LoadingComponent from './LoadingComponent';
 import Button from './Button';
-import Header from './Header';
+// import Header from './Header';
+import HeaderNav from './HeaderNav';
 import Footer from './Footer';
 import SearchForm from './SearchForm';
 import MapboxGLMap from './MapboxGLMap';
@@ -15,7 +16,8 @@ export {
   List,
   LoadingComponent,
   Button,
-  Header,
+  // Header,
+  HeaderNav,
   Footer,
   SearchForm,
   MapboxGLMap,
