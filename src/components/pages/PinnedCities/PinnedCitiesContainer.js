@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { fetchSavedCity, unpinCity } from '../../../state/actions';
 
 import { Spin, notification } from 'antd';
-import { Header, Footer } from '../../common';
-import RenderPinnedCity from './RenderPinnedCity';
+import { HeaderDashboard, Footer } from '../../common/';
+import RenderPinnedCities from './RenderPinnedCities';
 
 const spinStyle = {
   textAlign: 'center',
@@ -23,13 +23,12 @@ const PinnedCitiesContainer = ({
 }) => {
   const { push } = useHistory();
 
-  const [cityAndState] = useState(
+  const [cityAndState, setCityAndState] = useState(
     JSON.parse(localStorage.getItem('cityAndState'))
   );
 
   useEffect(() => {
     fetchSavedCity(localStorage.getItem('token'));
-    // fetchCityById(savedCities.id);
   }, [fetchSavedCity]);
 
   const deleteNotification = () => {
@@ -42,20 +41,29 @@ const PinnedCitiesContainer = ({
   const handleRemoveCity = id => {
     unpinCity(localStorage.getItem('token'), id);
     deleteNotification();
-    push(`/${cityAndState.state}/${cityAndState.city}`);
+    fetchSavedCity(localStorage.getItem('token'));
+    window.location.reload();
+  };
+
+  const handleOnCityClick = cityAndState => {
+    localStorage.setItem('cityAndState', JSON.stringify(cityAndState));
+    setCityAndState(localStorage.getItem('cityAndState'));
+    push(`/pinned/${cityAndState.state}/${cityAndState.city}`);
   };
 
   return (
     <>
-      <Header />
+      <HeaderDashboard />
       {isFetching ? (
         <div style={spinStyle}>
           <Spin tip="Loading..." size="large" />
         </div>
       ) : (
-        <RenderPinnedCity
+        <RenderPinnedCities
           savedCities={savedCities}
           handleRemoveCity={handleRemoveCity}
+          handleOnCityClick={handleOnCityClick}
+          id={localStorage.getItem('token')}
         />
       )}
       <Footer />
