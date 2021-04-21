@@ -1,5 +1,5 @@
 import React from 'react';
-import citySpireLogo from '../../assets/imgs/citySpireLogoAlternative.png';
+import citySpireLogo from '../../assets/imgs/cityspireLogoAlternative.png';
 
 const LogoStyle = {
   marginBottom: '0',
