@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { fetchSavedCity, unpinCity } from '../../../state/actions';
-
 import { Spin, notification } from 'antd';
 import { HeaderDashboard, Footer } from '../../common/';
 import RenderUserDashboard from './RenderUserDashboard';
@@ -53,6 +52,7 @@ const UserDashboardContainer = ({
 
   return (
     <>
+
       <HeaderDashboard />
       {isFetching ? (
         <div style={spinStyle}>
