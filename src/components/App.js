@@ -38,15 +38,16 @@ const App = () => {
   return (
     <Security {...config} onAuthRequired={authHandler}>
       <Switch>
-        <Layout className="mainLayout">
+        {/* <Layout className="mainLayout">
           <Header>
             <HeaderNav />
           </Header>
           <Content>
             <LandingPage />
           </Content>
-        </Layout>
+        </Layout> */}
 
+        <Route path="/" component={LandingPage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
 
