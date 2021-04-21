@@ -1,6 +1,9 @@
 import React from 'react';
-import { Menu, Image } from 'antd';
 import csLogo from '../../assets/imgs/CSpireLogo.png';
+
+import { Anchor, Image } from 'antd';
+
+const { Link } = Anchor;
 
 function LandingHeader() {
   return (
@@ -13,11 +16,12 @@ function LandingHeader() {
             style={{ width: '180px', paddingLeft: '30px', paddingTop: '10px' }}
           />
         </div>
-        <Menu theme="light" mode="horizontal" defaultSelectedKeys={['home']}>
-          <Menu.Item key="neighborhood">Neighborhood</Menu.Item>
-          <Menu.Item key="feature">Features</Menu.Item>
-          <Menu.Item key="login">SignUp/Login</Menu.Item>
-        </Menu>
+        <Anchor targetOffset="80">
+          <Link href="#hero" title="Home" />
+          <Link href="#factor" title="Neighborhood" />
+          <Link href="#feature" title="Features" />
+          <Link href="Login" title="SignUp/Login" target="LoginPage" />
+        </Anchor>
       </div>
     </div>
   );

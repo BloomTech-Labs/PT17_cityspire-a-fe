@@ -28,7 +28,7 @@ const items = [
 
 function CityFactors() {
   return (
-    <div className="block factorBlock">
+    <div id="factor" className="block factorBlock">
       <div className="main-container">
         <div className="titleContainer">
           <h2>Let Us Help You Find Your Ideal Home</h2>

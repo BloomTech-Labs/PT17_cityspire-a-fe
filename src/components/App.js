@@ -15,12 +15,7 @@ import { CitySearchResultsPage } from './pages/CitySearchResults';
 import { UserDashboardPage } from './pages/UserDashboard';
 import { PinnedCitiesPage } from './pages/PinnedCities';
 import { PinnedCityPage } from './pages/PinnedCity';
-
-import { HeaderNav } from './common';
 import { LandingPage } from './pages/Landing';
-
-import { Layout } from 'antd';
-const { Header, Content } = Layout;
 
 const App = () => {
   // The reason to declare App this way is so that we can use any helper functions we'd need for business logic, in our case auth.
@@ -38,16 +33,7 @@ const App = () => {
   return (
     <Security {...config} onAuthRequired={authHandler}>
       <Switch>
-        {/* <Layout className="mainLayout">
-          <Header>
-            <HeaderNav />
-          </Header>
-          <Content>
-            <LandingPage />
-          </Content>
-        </Layout> */}
-
-        <Route path="/" component={LandingPage} />
+        <Route exact path="/" component={LandingPage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
 
