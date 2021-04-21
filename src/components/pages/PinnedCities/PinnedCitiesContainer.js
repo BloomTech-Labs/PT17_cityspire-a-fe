@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { fetchSavedCity, unpinCity } from '../../../state/actions';
+
 import { Spin, notification } from 'antd';
 import { HeaderDashboard, Footer } from '../../common/';
-import RenderUserDashboard from './RenderUserDashboard';
+import RenderPinnedCities from './RenderPinnedCities';
 
 const spinStyle = {
   textAlign: 'center',
@@ -14,7 +15,7 @@ const spinStyle = {
   margin: 'auto',
 };
 
-const UserDashboardContainer = ({
+const PinnedCitiesContainer = ({
   fetchSavedCity,
   savedCities,
   unpinCity,
@@ -58,7 +59,7 @@ const UserDashboardContainer = ({
           <Spin tip="Loading..." size="large" />
         </div>
       ) : (
-        <RenderUserDashboard
+        <RenderPinnedCities
           savedCities={savedCities}
           handleRemoveCity={handleRemoveCity}
           handleOnCityClick={handleOnCityClick}
@@ -81,4 +82,4 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, {
   fetchSavedCity,
   unpinCity,
-})(UserDashboardContainer);
+})(PinnedCitiesContainer);

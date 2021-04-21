@@ -3,10 +3,13 @@ import FormInput from './FormInput';
 import List from './List';
 import LoadingComponent from './LoadingComponent';
 import Button from './Button';
-// import Header from './Header';
 import HeaderNav from './HeaderNav';
+import Header from './Header';
+import HeaderDashboard from './HeaderDashboard';
+import LogoComponent from './LogoComponent';
 import Footer from './Footer';
 import SearchForm from './SearchForm';
+import SearchComponent from './SearchComponent';
 import MapboxGLMap from './MapboxGLMap';
 // notice we're building out a 'package' of reusables here and exporting them as an object of component properties.
 // to use this, simply `import {foo, bar, baz} from '<path-to-this-directory>/ReusableComponents';`
@@ -16,9 +19,12 @@ export {
   List,
   LoadingComponent,
   Button,
-  // Header,
   HeaderNav,
+  Header,
+  HeaderDashboard,
+  LogoComponent,
   Footer,
+  SearchComponent,
   SearchForm,
   MapboxGLMap,
 };

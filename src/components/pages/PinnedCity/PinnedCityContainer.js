@@ -50,7 +50,7 @@ const PinnedCitiesContainer = ({
       <HeaderNav />
       {isFetching ? (
         <div style={spinStyle}>
-          <Spin tip="Loading..." size="large"></Spin>
+          <Spin tip="Loading..." size="large" />
         </div>
       ) : (
         <RenderPinnedCity

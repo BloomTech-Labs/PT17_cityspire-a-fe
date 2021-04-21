@@ -3,7 +3,6 @@ import { mapboxConfig } from '../../utils/mapboxConfig';
 import ReactMapGL from 'react-map-gl';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl-csp';
 mapboxgl.workerClass = 'worker-loader'.default;
-
 // eslint-disable-next-line import/no-webpack-loader-syntax
 
 const MapboxGLMap = ({ lat, long }) => {
