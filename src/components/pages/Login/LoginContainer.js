@@ -4,7 +4,7 @@ import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
 
 import { config } from '../../../utils/oktaConfig';
 
-import cityspireLogo from '../../../assets/imgs/CSpireLogo.png';
+import cityspireLogo from '../../../assets/imgs/cityspireLogo.png';
 
 const LoginContainer = () => {
   useEffect(() => {
@@ -23,7 +23,7 @@ const LoginContainer = () => {
       // add your custom logo to your signing/register widget here.
       i18n: {
         en: {
-          'primaryauth.title': 'Welcome!',
+          'primaryauth.title': 'Welcome to Cityspire',
           // change title for your app
         },
       },

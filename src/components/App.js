@@ -1,9 +1,8 @@
 import React from 'react';
 import { Route, useHistory, Switch, useParams } from 'react-router-dom';
-import './App.css';
 
 import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.less';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 import { NotFoundPage } from './pages/NotFound';
@@ -15,12 +14,6 @@ import { CitySearchResultsPage } from './pages/CitySearchResults';
 import { UserDashboardPage } from './pages/UserDashboard';
 import { PinnedCitiesPage } from './pages/PinnedCities';
 import { PinnedCityPage } from './pages/PinnedCity';
-
-import { HeaderNav } from './common';
-import { LandingPage } from './pages/Landing';
-
-import { Layout } from 'antd';
-const { Header, Content } = Layout;
 
 const App = () => {
   // The reason to declare App this way is so that we can use any helper functions we'd need for business logic, in our case auth.
@@ -38,26 +31,15 @@ const App = () => {
   return (
     <Security {...config} onAuthRequired={authHandler}>
       <Switch>
-        <Layout className="mainLayout">
-          <Header>
-            <HeaderNav />
-          </Header>
-          <Content>
-            <LandingPage />
-          </Content>
-        </Layout>
-
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
 
-        {/* Removed the SecureRoute component to load Homepage first */}
-
+        {/* any of the routes you need secured should be registered as SecureRoutes */}
         <SecureRoute
           path="/"
           exact
           component={() => <HomePage LoadingComponent={LoadingComponent} />}
         />
-
 
         <SecureRoute path="/profile/:id/user-dashboard" exact>
           <UserDashboardPage id={id} />
