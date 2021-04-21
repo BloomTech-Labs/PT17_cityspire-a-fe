@@ -37,14 +37,14 @@ const App = () => {
 
     <Security {...config} onAuthRequired={authHandler}>
       <Switch>
-//         <Layout className="mainLayout">
-//           <Header>
-//             <HeaderNav />
-//           </Header>
-//           <Content>
-//             <LandingPage />
-//           </Content>
-//         </Layout>
+        {/* <Layout className="mainLayout">
+          <Header>
+            <HeaderNav />
+          </Header>
+          <Content>
+            <LandingPage />
+          </Content>
+        </Layout> */}
 
         <Route path="/" component={LandingPage} />
         <Route path="/login" component={LoginPage} />
