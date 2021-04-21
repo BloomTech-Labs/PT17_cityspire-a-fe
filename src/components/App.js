@@ -21,7 +21,7 @@ import { LandingPage } from './pages/Landing';
 import { Layout } from 'antd';
 const { Header, Content } = Layout;
 
-// test push again
+// test push again ////////////
 
 const App = () => {
   // The reason to declare App this way is so that we can use any helper functions we'd need for business logic, in our case auth.
