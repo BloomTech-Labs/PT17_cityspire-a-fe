@@ -13,6 +13,7 @@ import { config } from '../utils/oktaConfig';
 import { LoadingComponent } from './common';
 import { CitySearchResultsPage } from './pages/CitySearchResults';
 import { UserDashboardPage } from './pages/UserDashboard';
+import { PinnedCitiesPage } from './pages/PinnedCities';
 import { PinnedCityPage } from './pages/PinnedCity';
 
 import { HeaderNav } from './common';
@@ -57,10 +58,13 @@ const App = () => {
           component={() => <HomePage LoadingComponent={LoadingComponent} />}
         />
 
-        {/* any of the routes you need secured should be registered as SecureRoutes */}
 
-        <SecureRoute path="/profile/:id/dashboard" exact>
+        <SecureRoute path="/profile/:id/user-dashboard" exact>
           <UserDashboardPage id={id} />
+        </SecureRoute>
+
+        <SecureRoute path="/profile/:id/pinned-cities" exact>
+          <PinnedCitiesPage id={id} />
         </SecureRoute>
 
         <SecureRoute path="/:state/:city" exact>

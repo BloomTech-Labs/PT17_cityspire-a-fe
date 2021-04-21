@@ -2,30 +2,30 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 import { useHistory } from 'react-router-dom';
 
-import cityspireLogo from '../../assets/imgs/CSpireLogo.png';
+import { Row, Col, Menu, Dropdown, Avatar, Space, Button } from 'antd';
 import {
-  Row,
-  Col,
-  Menu,
-  Dropdown,
-  Avatar,
-  Button,
-  Image,
-  Space,
-  Divider,
-} from 'antd';
-import { UserOutlined, DownOutlined, SearchOutlined } from '@ant-design/icons';
+  UserOutlined,
+  EllipsisOutlined,
+  LogoutOutlined,
+  DashboardOutlined,
+  HeartOutlined,
+} from '@ant-design/icons';
+
+import LogoComponent from './LogoComponent';
+import { SearchComponent } from './SearchComponent';
 
 const HeaderStyle = {
-  display: 'flex',
-  justifyContent: 'space-between',
   alignItems: 'center',
-  padding: '1.25rem 5vw',
+  padding: '0.75rem 1.5vw',
+  display: 'grid',
+  gridTemplateColumns: 'auto 1fr auto',
+  gridTemplateRows: '1fr',
+  gridGap: '1rem',
   borderBottom: 'solid thin #eee',
   backgroundColor: 'white',
 };
 
-const Header = () => {
+const HeaderDashboard = () => {
   const { authService } = useOktaAuth();
   const [userInfo, setUserInfo] = useState(null);
   // eslint-disable-next-line
@@ -53,14 +53,27 @@ const Header = () => {
     return () => (isSubscribed = false);
   }, [memoAuthService]);
 
-  const handleOnClick = id => {
+  const routeUserDashboard = id => {
     push(`/profile/${id}/user-dashboard`);
+  };
+
+  const routePinnedCities = id => {
+    push(`/profile/${id}/pinned-cities`);
   };
 
   const menu = (
     <Menu>
-      <Menu.Item key="0" onClick={() => handleOnClick(userInfo.sub)}>
+      <Menu.Item key="0" onClick={() => routeUserDashboard(userInfo.sub)}>
+        <DashboardOutlined />
         User Dashboard
+      </Menu.Item>
+      <Menu.Item key="1" onClick={() => routePinnedCities(userInfo.sub)}>
+        <HeartOutlined />
+        Pinned Cities
+      </Menu.Item>
+      <Menu.Item key="2" onClick={() => authService.logout()}>
+        <LogoutOutlined />
+        Log out
       </Menu.Item>
     </Menu>
   );
@@ -68,36 +81,30 @@ const Header = () => {
   return (
     <Row style={HeaderStyle}>
       <Col>
-        <a href="/">
-          <Image
-            preview={false}
-            src={cityspireLogo}
-            style={{ width: '180px', padding: '10px' }}
-          />
-        </a>
+        <LogoComponent />
       </Col>
-
       <Col>
         <Row>
-          <Space size="large">
+          <SearchComponent />
+        </Row>
+      </Col>
+      <Col>
+        <Row>
+          <Space size="large" wrap>
             <Dropdown overlay={menu} trigger={['click']}>
               <Space
+                wrap
                 size="small"
                 onClick={e => e.preventDefault()}
                 style={{ cursor: 'pointer' }}
               >
                 <Avatar size="small" icon={<UserOutlined />} />
-                {userInfo ? userInfo.name : 'loading...'} <DownOutlined />
+                <Button>
+                  {userInfo ? userInfo.name : 'loading...'}
+                  <EllipsisOutlined />
+                </Button>
               </Space>
             </Dropdown>
-            <Divider type="vertical" />
-            <a href="/" style={{ color: 'grey' }}>
-              <SearchOutlined
-                style={{ cursor: 'pointer', fontSize: '1.15rem' }}
-              />
-            </a>
-            <Divider type="vertical" />
-            <Button onClick={() => authService.logout()}>Logout</Button>
           </Space>
         </Row>
       </Col>
@@ -105,4 +112,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderDashboard;
