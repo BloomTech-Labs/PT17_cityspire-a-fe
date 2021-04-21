@@ -4,7 +4,7 @@ import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
 
 import { config } from '../../../utils/oktaConfig';
 
-import cityspireLogo from '../../../assets/imgs/cityspireLogo.png';
+// import cityspireLogo from '../../assets/imgs/cityspireLogoAlt.png';
 
 const LoginContainer = () => {
   useEffect(() => {
@@ -19,7 +19,7 @@ const LoginContainer = () => {
       },
       features: { registration: false },
       // turning this feature on allows your widget to use Okta for user registration
-      logo: cityspireLogo,
+      // logo: cityspireLogo,
       // add your custom logo to your signing/register widget here.
       i18n: {
         en: {
