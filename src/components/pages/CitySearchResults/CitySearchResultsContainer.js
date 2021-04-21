@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { fetchCityData, pinCity, fetchSavedCity } from '../../../state/actions';
 import RenderCitySearchResults from './RenderCitySearchResults';
 import { Spin, notification } from 'antd';
-import { HeaderNav, Footer } from '../../common/';
+import { Header, Footer } from '../../common/';
 
 const spinStyle = {
   textAlign: 'center',
@@ -74,7 +74,7 @@ const CitySearchResultsContainer = ({
         </div>
       ) : (
         <div>
-          <HeaderNav />
+          <Header />
           <RenderCitySearchResults
             cityData={cityData}
             handleSaveCity={handleSaveCity}

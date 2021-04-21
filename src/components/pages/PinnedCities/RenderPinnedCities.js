@@ -11,6 +11,14 @@ const StatisticStyle = {
   marginBottom: '1rem',
 };
 
+const EmptyStyle = {
+  padding: '0',
+  flexGrow: '1',
+  display: 'grid',
+  justifyContent: 'center',
+  alignContent: 'center',
+};
+
 const RenderPinnedCities = ({
   savedCities,
   handleRemoveCity,
@@ -19,7 +27,7 @@ const RenderPinnedCities = ({
   return (
     <>
       {savedCities.length === 0 ? (
-        <Empty style={{ padding: '24vw 0' }} description="No pinned cities." />
+        <Empty style={EmptyStyle} description={false} />
       ) : (
         Object.keys(savedCities).map((key, i) => (
           <Row

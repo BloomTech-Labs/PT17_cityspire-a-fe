@@ -1,12 +1,10 @@
 import React from 'react';
-// import RenderLandingPage from './RenderLandingPage';
-import RenderCityHome from './RenderCityHome';
+import RenderLandingPage from './RenderLandingPage';
 
 function LandingContainer({ LoadingComponent }) {
   return (
     <>
-      {/* <RenderLandingPage /> */}
-      <RenderCityHome />
+      <RenderLandingPage />
     </>
   );
 }

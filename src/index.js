@@ -9,8 +9,6 @@ import { reducers } from './state/reducers';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './components/App';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(
