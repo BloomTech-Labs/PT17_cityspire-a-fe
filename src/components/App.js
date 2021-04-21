@@ -47,6 +47,8 @@ const App = () => {
           </Content>
         </Layout> */}
 
+        {/* test refactor  */}
+
         <Route path="/" component={LandingPage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
