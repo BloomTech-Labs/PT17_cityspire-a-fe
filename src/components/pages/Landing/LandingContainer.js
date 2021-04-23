@@ -6,6 +6,7 @@ import HeaderNav from '../../common/HeaderNav.js';
 import CityFooter from '../../common/footerLanding';
 
 import { Layout } from 'antd';
+// import RenderLandingPage from './RenderLandingPage';
 
 function LandingContainer({ LoadingComponent }) {
   const { Header, Content, Footer } = Layout;

@@ -1,9 +1,8 @@
 import React from 'react';
 import { Route, useHistory, Switch, useParams } from 'react-router-dom';
-import './App.css';
 
 import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.less';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 import { NotFoundPage } from './pages/NotFound';
@@ -15,7 +14,14 @@ import { CitySearchResultsPage } from './pages/CitySearchResults';
 import { UserDashboardPage } from './pages/UserDashboard';
 import { PinnedCitiesPage } from './pages/PinnedCities';
 import { PinnedCityPage } from './pages/PinnedCity';
+
 import LandingPage from './pages/Landing/LandingContainer.js';
+
+const RootStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  minHeight: '100vh',
+};
 
 const App = () => {
   // The reason to declare App this way is so that we can use any helper functions we'd need for business logic, in our case auth.
