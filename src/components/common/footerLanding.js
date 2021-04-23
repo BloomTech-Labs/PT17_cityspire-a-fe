@@ -4,8 +4,6 @@ import csLogo from '../../assets/imgs/CSpireFtLogo.png';
 
 import { BackTop, Image } from 'antd';
 
-// testing
-
 const CityFooter = () => {
   const [date, setDate] = useState();
 
