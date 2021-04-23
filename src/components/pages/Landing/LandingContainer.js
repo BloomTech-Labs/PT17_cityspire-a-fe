@@ -1,10 +1,12 @@
 import React from 'react';
-// import RenderLandingPage from './RenderLandingPage';
+import 'antd/dist/antd.css';
+
 import RenderCityHome from './RenderCityHome';
 import HeaderNav from '../../common/HeaderNav';
+import CityFooter from '../../common/footerLanding';
 
 import { Layout } from 'antd';
-const { Header, Content } = Layout;
+const { Header, Content, Footer } = Layout;
 
 function LandingContainer({ LoadingComponent }) {
   return (
@@ -17,6 +19,9 @@ function LandingContainer({ LoadingComponent }) {
         <Content>
           <RenderCityHome />
         </Content>
+        <Footer>
+          <CityFooter />
+        </Footer>
       </Layout>
     </>
   );

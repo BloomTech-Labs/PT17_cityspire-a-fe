@@ -4,6 +4,7 @@ import List from './List';
 import LoadingComponent from './LoadingComponent';
 import Button from './Button';
 import HeaderNav from './HeaderNav';
+import footerLanding from './footerLanding';
 import Header from './Header';
 import HeaderDashboard from './HeaderDashboard';
 import LogoComponent from './LogoComponent';
@@ -20,6 +21,7 @@ export {
   LoadingComponent,
   Button,
   HeaderNav,
+  footerLanding,
   Header,
   HeaderDashboard,
   LogoComponent,

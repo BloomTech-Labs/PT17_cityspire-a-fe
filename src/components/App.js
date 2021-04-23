@@ -39,7 +39,7 @@ const App = () => {
 
         {/* Removed the SecureRoute component to load Homepage first */}
 
-        <SecureRoute
+        <Route
           path="/"
           exact
           component={() => <HomePage LoadingComponent={LoadingComponent} />}

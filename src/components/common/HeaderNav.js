@@ -20,7 +20,7 @@ function LandingHeader() {
           <Link href="#hero" title="Home" />
           <Link href="#factor" title="Neighborhood" />
           <Link href="#feature" title="Features" />
-          <Link href="Login" title="SignUp/Login" target="LoginPage" />
+          <Link href="Login" title="Sign Up/Log In" target="LoginPage" />
         </Anchor>
       </div>
     </div>

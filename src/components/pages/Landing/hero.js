@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel } from 'antd';
+import { Button, Carousel } from 'antd';
 
 const items = [
   {
@@ -26,6 +26,16 @@ function CityHero() {
                 >
                   {item.title}
                 </h3>
+                <p></p>
+                <div className="btnHolder">
+                  <Button
+                    type="primary"
+                    size="medium"
+                    style={{ borderRadius: '10px' }}
+                  >
+                    Learn More
+                  </Button>
+                </div>
               </div>
             </div>
           );

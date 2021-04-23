@@ -207,7 +207,7 @@ hero
   background-repeat: no-repeat;
   background-position: 40% 40%;
   background-size: cover;
-  height: 80vh;
+  height: 95vh;
 }
 
 .heroBlock .main-container {
@@ -274,4 +274,61 @@ factors
 
 .factorBlock .content {
   text-align: center;
+}
+/* 
+footer
+------
+*/
+.ant-layout-footer {
+  background: rgb(12, 16, 54) !important;
+  color: #fff !important;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 10px 0 25px;
+}
+
+.footer .logo {
+  font-size: 22px;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.footer .fas {
+  color: #1890ff;
+  font-size: 28px;
+  margin: 0 5px 0 0;
+}
+
+.footer .logo a {
+  color: #fff;
+}
+
+.footer .socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 24px;
+}
+
+.footer .socials li {
+  margin: 0 20px;
+}
+
+.footer .socials a {
+  color: #fff;
+}
+
+.footer .socials a:hover {
+  color: #1890ff;
+}
+
+.footer .goTop:hover {
+  opacity: 0.7;
 }
