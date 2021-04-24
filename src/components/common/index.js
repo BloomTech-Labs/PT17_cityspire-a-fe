@@ -3,7 +3,7 @@ import FormInput from './FormInput';
 import List from './List';
 import LoadingComponent from './LoadingComponent';
 import Button from './Button';
-import HeaderNav from './HeaderNav';
+import HeaderLanding from './HeaderLanding';
 import footerLanding from './footerLanding';
 import Header from './Header';
 import HeaderDashboard from './HeaderDashboard';
@@ -20,7 +20,7 @@ export {
   List,
   LoadingComponent,
   Button,
-  HeaderNav,
+  HeaderLanding,
   footerLanding,
   Header,
   HeaderDashboard,

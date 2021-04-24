@@ -1,21 +1,20 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 
-import RenderCityHome from './RenderCityHome.js';
-import HeaderNav from '../../common/HeaderNav.js';
+import RenderCityHome from './RenderCityHome';
+import LandingHeader from '../../common/HeaderLanding';
 import CityFooter from '../../common/footerLanding';
 
 import { Layout } from 'antd';
-// import RenderLandingPage from './RenderLandingPage';
+const { Header, Content, Footer } = Layout;
 
 function LandingContainer({ LoadingComponent }) {
-  const { Header, Content, Footer } = Layout;
   return (
     <>
       {/* <RenderLandingPage /> */}
       <Layout className="mainLayout">
         <Header>
-          <HeaderNav />
+          <LandingHeader />
         </Header>
         <Content>
           <RenderCityHome />

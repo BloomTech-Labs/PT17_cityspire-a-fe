@@ -17,7 +17,6 @@ function LandingHeader() {
           />
         </div>
         <Anchor targetOffset="80">
-          <Link href="#hero" title="Home" />
           <Link href="#factor" title="Neighborhood" />
           <Link href="#feature" title="Features" />
           <Link href="Login" title="Sign Up/Log In" target="LoginPage" />
