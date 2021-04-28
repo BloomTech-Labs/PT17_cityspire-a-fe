@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, useHistory, Switch, useParams } from 'react-router-dom';
 import './App.css';
 
-import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
+import { Security, SecureRoute } from '@okta/okta-react';
 import 'antd/dist/antd.less';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -35,8 +35,8 @@ const App = () => {
     <Security {...config} onAuthRequired={authHandler}>
       <Switch>
         <Route exact path="/" component={LandingPage} />
-        <Route path="/login" component={LoginPage} />
-        <Route path="/implicit/callback" component={LoginCallback} />
+        <Route exact path="/login" component={LoginPage} />
+        <Route path="/implicit/callback" component={UserDashboardPage} />
 
         {/* Removed the SecureRoute component to load Homepage first */}
 
