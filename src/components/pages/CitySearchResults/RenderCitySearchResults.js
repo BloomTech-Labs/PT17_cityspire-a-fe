@@ -83,6 +83,7 @@ const RenderCitySearchResults = ({
             shape="round"
             size="large"
             onClick={() => handleSaveCity()}
+            style={{ background: '#17AC98', border: 'none' }}
           >
             <PushpinFilled />
             Pin City

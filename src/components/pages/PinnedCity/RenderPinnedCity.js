@@ -14,6 +14,8 @@ import {
   PushpinFilled,
   EnvironmentFilled,
 } from '@ant-design/icons';
+import { fetchCityData } from '../../../state/actions';
+import { handleSaveCity } from './../../../components/pages/CitySearchResults/CitySearchResultsContainer';
 
 const StatisticStyle = {
   fontSize: '1.5rem',
@@ -28,9 +30,9 @@ const RowStyle = {
 const RenderPinnedCities = ({ savedCities, handleRemoveCity }) => {
   return (
     <>
-      {Object.keys(savedCities).map((key, i) => (
-        <div key={key}>
-          {savedCities[key].map(item => (
+      {Object.keys(savedCities).map((i, city) => (
+        <div key={i}>
+          {savedCities.map(item => (
             <div>
               <Row
                 style={{
@@ -50,9 +52,7 @@ const RenderPinnedCities = ({ savedCities, handleRemoveCity }) => {
                           color: 'rgb(24, 144, 255)',
                         }}
                       />
-                      {savedCities
-                        ? `${item.city}, ${item.state}`
-                        : 'Loading...'}
+                      {item.city.city}, {item.city.state}
                     </h1>
                   </PageHeader>
                 </Col>
